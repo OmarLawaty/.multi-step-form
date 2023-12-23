@@ -13,6 +13,10 @@ export default extendTheme({
       body: {
         scrollbarGutter: 'stable',
         minH: '100vh',
+        bg: 'gray.300',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         fontSize: '32px',
         fontWeight: '700'
       }
