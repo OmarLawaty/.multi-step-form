@@ -10,3 +10,9 @@ export const getStep: GetStep = (currentStep, changeInIndex = 0) => {
 
   return STEPS[currentStepIndex + changeInIndex];
 };
+
+export const getYearlyCost = (monthlyCost: number): number => {
+  const conversionAmount: number = 10;
+
+  return monthlyCost * conversionAmount;
+};

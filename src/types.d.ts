@@ -8,13 +8,13 @@ type UserInfo = {
 };
 
 type PlanInfo = {
-  plan: 0 | 1 | 2;
-  planType: 'monthly' | 'yearly';
+  selectedPlan: 0 | 1 | 2;
 };
 
 type FormInfo = UserInfo & PlanInfo;
 
 interface FormValues extends FormInfo {
   currentStep: Step;
+  subscriptionType: 'monthly' | 'yearly';
   activeAddons: [boolean, boolean, boolean];
 }

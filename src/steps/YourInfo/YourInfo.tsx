@@ -7,8 +7,6 @@ interface YourInfoProps {
   setFormValues: React.Dispatch<React.SetStateAction<FormValues>>;
 }
 
-type FieldValidation = (name: string, email: string, phoneNumber: string) => void;
-
 export const YourInfo = ({ formValues, setFormValues }: YourInfoProps) => {
   const [errorMessage, setErrorMessage] = useState({ name: '', email: '', phoneNumber: '' });
 
@@ -85,12 +83,12 @@ export const YourInfo = ({ formValues, setFormValues }: YourInfoProps) => {
       </Box>
 
       <Box>
-        <Box as="label" htmlFor="phoneNumber">
+        <Box as="label" htmlFor="phone-number">
           Phone Number
         </Box>
 
         <Input
-          id="phoneNumber"
+          id="phone-number"
           type="text"
           placeholder="e.g. 1234567890"
           value={formValues.phoneNumber}

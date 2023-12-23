@@ -4,8 +4,8 @@ export const DEFAULT_FORM_VALUES: FormValues = {
   email: '',
   phoneNumber: '',
   isValid: true,
-  plan: 0,
-  planType: 'monthly',
+  selectedPlan: 0,
+  subscriptionType: 'monthly',
   activeAddons: [true, false, false]
 };
 
