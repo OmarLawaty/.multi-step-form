@@ -1,16 +1,12 @@
 export const DEFAULT_FORM_VALUES: FormValues = {
-  activeStepIndex: 0,
+  currentStep: 'your_info',
   name: '',
   email: '',
   phoneNumber: '',
+  isValid: true,
   plan: 0,
   planType: 'monthly',
-  addon: [true, true, false],
-  error: {
-    name: false,
-    email: false,
-    phoneNumber: false
-  }
+  activeAddons: [true, false, false]
 };
 
 export const STEPS: Step[] = ['your_info', 'select_plan', 'add-ons', 'summary'];

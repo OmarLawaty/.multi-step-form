@@ -1,31 +1,33 @@
-import { Box } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Box, Flex } from '@chakra-ui/react';
 
 import { DEFAULT_FORM_VALUES, STEPS } from './constants';
 import { Addons, SelectPlan, Summary, YourInfo } from './steps';
 import { NavigationButtons, NavigationPanel } from './components';
-import { useLocalStorage } from './hooks';
 
 const App = () => {
-  const [formValues, setFormValues] = useLocalStorage<FormValues>('form-values', DEFAULT_FORM_VALUES);
+  const [formValues, setFormValues] = useState<FormValues>(DEFAULT_FORM_VALUES);
 
   return (
-    <Box as="main">
-      <NavigationPanel currentStepIndex={formValues.activeStepIndex} />
+    <Flex as="main" justify="center" gap="10" w="60vw" minH="600px" rounded="24" bg="white" p="5">
+      <NavigationPanel currentStep={formValues.currentStep} />
 
-      <Box as="section">
-        {STEPS[formValues.activeStepIndex] === 'your_info' ? (
-          <YourInfo />
-        ) : STEPS[formValues.activeStepIndex] === 'select_plan' ? (
-          <SelectPlan />
-        ) : STEPS[formValues.activeStepIndex] === 'add-ons' ? (
-          <Addons />
-        ) : STEPS[formValues.activeStepIndex] ? (
-          <Summary />
-        ) : null}
+      <Flex as="section" flexDir="column" flex={1}>
+        <Box flex={1}>
+          {formValues.currentStep === 'your_info' ? (
+            <YourInfo formValues={formValues} setFormValues={setFormValues} />
+          ) : formValues.currentStep === 'select_plan' ? (
+            <SelectPlan formValues={formValues} setFormValues={setFormValues} />
+          ) : formValues.currentStep === 'add-ons' ? (
+            <Addons formValues={formValues} setFormValues={setFormValues} />
+          ) : formValues.currentStep ? (
+            <Summary formValues={formValues} />
+          ) : null}
+        </Box>
 
         <NavigationButtons formValues={formValues} setFormValues={setFormValues} />
-      </Box>
-    </Box>
+      </Flex>
+    </Flex>
   );
 };
 

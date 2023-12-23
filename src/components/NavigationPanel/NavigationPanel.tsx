@@ -1,24 +1,36 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 
 import { STEPS } from '../../constants';
 
 interface NavigationPanelProps {
-  currentStepIndex: number;
+  currentStep: Step;
 }
 
-export const NavigationPanel = ({ currentStepIndex }: NavigationPanelProps) => {
+export const NavigationPanel = ({ currentStep }: NavigationPanelProps) => {
   return (
-    <Box as="article">
+    <Box as="article" minW="15vw">
       {STEPS.map((step, index) => (
-        <Box key={index} border={currentStepIndex === index ? '1px solid' : 'transparent'}>
-          <Box>{index + 1}</Box>
+        <Flex key={index}>
+          <Flex
+            align="center"
+            justify="center"
+            w="16"
+            h="16"
+            rounded="full"
+            borderWidth="1px"
+            borderStyle="solid"
+            borderColor="gray.300"
+            bg={currentStep === step ? 'gray.500' : 'transparent'}
+          >
+            {index + 1}
+          </Flex>
 
-          <Box>
+          <Flex flexDir="column">
             <Text>step {index + 1}</Text>
 
             <Text>{step.split('_').join(' ')}</Text>
-          </Box>
-        </Box>
+          </Flex>
+        </Flex>
       ))}
     </Box>
   );
