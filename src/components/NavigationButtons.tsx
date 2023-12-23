@@ -12,7 +12,11 @@ export const NavigationButtons = ({ formValues, setFormValues }: NavigationButto
   return (
     <Flex mt="auto">
       {STEPS.indexOf(formValues.currentStep) > 0 ? (
-        <Button onClick={() => setFormValues({ ...formValues, currentStep: getStep(formValues.currentStep, -1) })}>
+        <Button
+          onClick={() =>
+            setFormValues({ ...formValues, isValid: true, currentStep: getStep(formValues.currentStep, -1) })
+          }
+        >
           Go Back
         </Button>
       ) : null}

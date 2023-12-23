@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box, Flex } from '@chakra-ui/react';
 
-import { DEFAULT_FORM_VALUES, STEPS } from './constants';
+import { DEFAULT_FORM_VALUES } from './constants';
 import { Addons, SelectPlan, Summary, YourInfo } from './steps';
 import { NavigationButtons, NavigationPanel } from './components';
 
@@ -21,7 +21,7 @@ const App = () => {
           ) : formValues.currentStep === 'add-ons' ? (
             <Addons formValues={formValues} setFormValues={setFormValues} />
           ) : formValues.currentStep ? (
-            <Summary formValues={formValues} />
+            <Summary />
           ) : null}
         </Box>
 

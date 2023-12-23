@@ -1,25 +1,12 @@
 import { Box, Flex, FormControl, FormLabel, Heading, Image, Switch, Text } from '@chakra-ui/react';
 
-import { arcadeIcon, controllerIcon, gamePadIcon } from '../../assets/images';
 import { getYearlyCost } from '../../utils/helpers';
+import { PLANS } from '../../constants';
 
 interface SelectPlanProps {
   formValues: FormValues;
   setFormValues: React.Dispatch<React.SetStateAction<FormValues>>;
 }
-
-interface Plan {
-  title: string;
-  cost: number;
-  icon: string;
-  freeMonths?: number;
-}
-
-const PLANS: Plan[] = [
-  { title: 'Arcade', cost: 9, icon: arcadeIcon, freeMonths: 2 },
-  { title: 'Advanced', cost: 12, icon: gamePadIcon, freeMonths: 2 },
-  { title: 'Pro', cost: 15, icon: controllerIcon, freeMonths: 2 }
-];
 
 export const SelectPlan = ({ formValues, setFormValues }: SelectPlanProps) => {
   const isMonthly = formValues.subscriptionType === 'monthly';
@@ -33,15 +20,15 @@ export const SelectPlan = ({ formValues, setFormValues }: SelectPlanProps) => {
       </Box>
 
       <Box>
-        <Flex>
-          {PLANS.map((plan, index) => (
+        <Flex gap="2">
+          {PLANS.map(plan => (
             <Box
-              key={index}
+              key={plan.title}
               borderWidth="1px"
-              borderColor={index === formValues.selectedPlan ? 'blue' : 'gray.500'}
+              borderColor={plan.title === formValues.selectedPlan ? 'blue' : 'gray.500'}
               cursor="pointer"
               userSelect="none"
-              onClick={() => setFormValues({ ...formValues, selectedPlan: index as 0 | 1 | 2 })}
+              onClick={() => setFormValues({ ...formValues, selectedPlan: plan.title })}
             >
               <Image src={plan.icon} />
 
