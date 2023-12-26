@@ -17,43 +17,33 @@ export const YourInfo = () => {
   const [error, setError] = useState(defaultErrorMessages);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [__, setCurrentProductOptions] = useProductOptionsState();
+  const [currentProductOptions, setCurrentProductOptions] = useProductOptionsState();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setCurrentStep] = useStepState();
 
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const phoneNumberRef = useRef<HTMLInputElement>(null);
+  const [inputValues, setInputValues] = useState(currentProductOptions.userData);
 
   const ValidateInput = () => {
     const errorValues = defaultErrorMessages;
 
-    const nameValue = nameRef.current?.value as string;
-    const emailValue = emailRef.current?.value as string;
-    const phoneNumberValue = phoneNumberRef.current?.value as string;
-
     const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const isEmailCorrect = validEmailRegex.test(emailValue as string);
+    const isEmailCorrect = validEmailRegex.test(inputValues.email);
     if (!isEmailCorrect) errorValues.email = 'Enter a valid email address';
 
-    const isNameEmpty = nameValue === '';
+    const isNameEmpty = inputValues.name === '';
     if (isNameEmpty) errorValues.name = 'This field is required';
 
-    const isEmailEmpty = emailValue === '';
+    const isEmailEmpty = inputValues.email === '';
     if (isEmailEmpty) errorValues.email = 'This field is required';
 
-    const isPhoneNumberEmpty = phoneNumberValue === '';
+    const isPhoneNumberEmpty = inputValues.phoneNumber === '';
     if (isPhoneNumberEmpty) errorValues.phoneNumber = 'This field is required';
 
     const isAllInputsValid = !isNameEmpty && !isEmailEmpty && !isPhoneNumberEmpty && isEmailCorrect;
     if (isAllInputsValid) {
       setCurrentProductOptions({
         type: 'update-user-data',
-        payload: {
-          name: nameValue,
-          email: emailValue,
-          phoneNumber: phoneNumberValue
-        }
+        payload: inputValues
       });
 
       setCurrentStep({ type: 'go-to-next-step' });
@@ -90,9 +80,10 @@ export const YourInfo = () => {
             id="name"
             type="text"
             placeholder="Your name"
-            ref={nameRef}
             fontWeight="500"
             h={['40px', null, '50px']}
+            value={inputValues.name}
+            onChange={e => setInputValues({ ...inputValues, name: e.target.value })}
           />
         </Flex>
 
@@ -111,9 +102,10 @@ export const YourInfo = () => {
             id="email"
             type="email"
             placeholder="youremail@example.com"
-            ref={emailRef}
             fontWeight="500"
             h={['40px', null, '50px']}
+            value={inputValues.email}
+            onChange={e => setInputValues({ ...inputValues, email: e.target.value })}
           />
         </Flex>
 
@@ -132,9 +124,10 @@ export const YourInfo = () => {
             id="phone-number"
             type="text"
             placeholder="e.g. +1234567890"
-            ref={phoneNumberRef}
             fontWeight="500"
             h={['40px', null, '50px']}
+            value={inputValues.phoneNumber}
+            onChange={e => setInputValues({ ...inputValues, phoneNumber: e.target.value })}
           />
         </Flex>
       </Flex>
@@ -145,7 +138,7 @@ export const YourInfo = () => {
           ValidateInput();
         }}
       >
-        Next
+        Next Step
       </NavigationButtons>
     </>
   );
