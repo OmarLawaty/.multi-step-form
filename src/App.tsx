@@ -12,7 +12,17 @@ const App = () => {
   const CurrentStepComponent = StepsComponents[currentStep];
 
   return (
-    <Flex as="main" justify="center" gap="10" w="60vw" minH="600px" rounded="24" bg="white" p="5">
+    <Flex
+      as="main"
+      flexDir={['column', null, 'row']}
+      justify="center"
+      gap={[0, null, 10]}
+      w={['100vw', null, '65vw']}
+      minH={['100vh', null, '600px']}
+      rounded={[0, null, 16]}
+      bg={['gray.100', null, 'white']}
+      p={[0, null, 4]}
+    >
       {currentStep !== 'thankYou' && <NavigationPanel />}
 
       <Flex as="section" flexDir="column" flex={1}>
