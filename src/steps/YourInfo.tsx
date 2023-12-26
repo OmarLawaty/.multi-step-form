@@ -1,4 +1,4 @@
-import { Box, Heading, Input, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Input, Text } from '@chakra-ui/react';
 import { useRef, useState } from 'react';
 
 import { NavigationButtons } from '../components/index.ts';
@@ -64,47 +64,80 @@ export const YourInfo = () => {
 
   return (
     <>
-      <Box>
-        <Heading as="h1">Personal info</Heading>
+      <Flex flexDir="column" gap={[2, null, 2.5]}>
+        <Heading as="h1" fontSize={[25, null, 32]} color="blue.900">
+          Personal info
+        </Heading>
 
-        <Text>Please provide your name, email address, and phone number.</Text>
-      </Box>
+        <Text fontWeight="400" letterSpacing="-0.2px" color="gray.500" w={['80%', null, '100%']}>
+          Please provide your name, email address, and phone number.
+        </Text>
+      </Flex>
 
-      <Box>
-        <Box>
-          <Box as="label" htmlFor="name">
-            Name
-          </Box>
+      <Flex flexDir="column" gap={[3.5, null, 5]}>
+        <Flex flexDir="column" gap={[0.5, null, 2]}>
+          <Flex>
+            <Box as="label" htmlFor="name" color="blue.900" fontWeight="500" fontSize={['xs', null, 'small']}>
+              Name
+            </Box>
 
-          <Box ml="auto">{error.name}</Box>
-        </Box>
+            <Box ml="auto" color="red.600" fontSize={['xs', null, 'small']} letterSpacing="0.5px">
+              {error.name}
+            </Box>
+          </Flex>
 
-        <Input id="name" type="text" placeholder="Your name" ref={nameRef} />
-      </Box>
+          <Input
+            id="name"
+            type="text"
+            placeholder="Your name"
+            ref={nameRef}
+            fontWeight="500"
+            h={['40px', null, '50px']}
+          />
+        </Flex>
 
-      <Box>
-        <Box>
-          <Box htmlFor="email" as="label">
-            Email Address
-          </Box>
+        <Flex flexDir="column" gap={[0.5, null, 2]}>
+          <Flex>
+            <Box as="label" htmlFor="email" color="blue.900" fontWeight="500" fontSize={['xs', null, 'small']}>
+              Email Address
+            </Box>
 
-          <Box ml="auto">{error.email}</Box>
-        </Box>
+            <Box ml="auto" color="red.600" fontSize={['xs', null, 'small']} letterSpacing="0.5px">
+              {error.email}
+            </Box>
+          </Flex>
 
-        <Input id="email" type="email" placeholder="youremail@example.com" ref={emailRef} />
-      </Box>
+          <Input
+            id="email"
+            type="email"
+            placeholder="youremail@example.com"
+            ref={emailRef}
+            fontWeight="500"
+            h={['40px', null, '50px']}
+          />
+        </Flex>
 
-      <Box>
-        <Box>
-          <Box as="label" htmlFor="phone-number">
-            Phone Number
-          </Box>
+        <Flex flexDir="column" gap={[0.5, null, 2]}>
+          <Flex>
+            <Box as="label" htmlFor="phone-number" color="blue.900" fontWeight="500" fontSize={['xs', null, 'small']}>
+              Phone Number
+            </Box>
 
-          <Box ml="auto">{error.phoneNumber}</Box>
-        </Box>
+            <Box ml="auto" color="red.600" fontSize={['xs', null, 'small']} letterSpacing="0.5px">
+              {error.phoneNumber}
+            </Box>
+          </Flex>
 
-        <Input id="phone-number" type="text" placeholder="e.g. +1234567890" ref={phoneNumberRef} />
-      </Box>
+          <Input
+            id="phone-number"
+            type="text"
+            placeholder="e.g. +1234567890"
+            ref={phoneNumberRef}
+            fontWeight="500"
+            h={['40px', null, '50px']}
+          />
+        </Flex>
+      </Flex>
 
       <NavigationButtons
         isFirstStep

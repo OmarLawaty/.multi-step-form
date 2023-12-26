@@ -15,17 +15,31 @@ const App = () => {
     <Flex
       as="main"
       flexDir={['column', null, 'row']}
-      justify="center"
-      gap={[0, null, 10]}
+      justify={['flex-start', null, 'center']}
+      gap={[0, null, 24]}
       w={['100vw', null, '65vw']}
       minH={['100vh', null, '600px']}
       rounded={[0, null, 16]}
       bg={['gray.100', null, 'white']}
       p={[0, null, 4]}
+      pos="relative"
     >
       {currentStep !== 'thankYou' && <NavigationPanel />}
 
-      <Flex as="section" flexDir="column" flex={1}>
+      <Flex
+        as="section"
+        flexDir="column"
+        gap={[5, null, 9]}
+        flex={1}
+        bg="white"
+        top="100px"
+        insetX="4"
+        pos={['absolute', null, 'static']}
+        rounded={[10, null, 0]}
+        pl={[6, null, 2]}
+        pr={[6, null, 20]}
+        py={[7, null, 9]}
+      >
         <ProductOptionsProvider>
           <CurrentStepComponent />
         </ProductOptionsProvider>
