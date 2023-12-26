@@ -5,6 +5,12 @@ import { Step } from '../types';
 
 type Action =
   | {
+      type: 'set-step';
+      payload: {
+        selectedStep: Step;
+      };
+    }
+  | {
       type: 'go-to-next-step';
     }
   | {
@@ -31,11 +37,15 @@ const stepReducer = (currentStep: Step, action: Action): Step => {
 
     case 'go-back-step':
       return getStep(currentStep, -1);
+
+    case 'set-step':
+      return action.payload.selectedStep;
   }
 };
 
 type StepState = () => [Step, React.Dispatch<Action>];
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useStepState: StepState = () => [useContext(StepsContext), useContext(StepsDispatcherContext)];
 
 const getStep = (currentStep: Step, changeInIndex = 0) => {
