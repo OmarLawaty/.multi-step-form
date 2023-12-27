@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# Multi Step Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Desktop Preview](./design/desktop-preview.jpg)
 
-Currently, two official plugins are available:
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Solution URL](https://www.frontendmentor.io/solutions/react-typescript-multistep-form-D73Pw2GGrA)
+- [Live Site URL](https://calc-app-omarlawaty.vercel.app/)
 
-## Expanding the ESLint configuration
+## Table of contents
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Getting started](#getting-started)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-- Configure the top-level `parserOptions` property like this:
+## Getting started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Make sure to have `node.js` installed and that you are in the root directory of the project, then simply run:
+
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To run the development server, execute:
+
+```bash
+npm run dev
+```
+
+## My process
+
+### Built with
+
+- [React](https://reactjs.org/) - Front-end Framework
+- [TypeScript](https://www.typescriptlang.org/) - JS High-level programming language
+- [Chakra-UI](https://chakra-ui.com) - Css component library
+
+### Useful resources
+
+- [W3schools](w3schools.com/)
+- [stackoverflow](stackoverflow.com/)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/)
+- [ReactJs Docs](https://react.dev/learn)
+
+## Author
+
+- Name - Omar Mohamed
+- Frontend Mentor - [@OmarLawaty](https://www.frontendmentor.io/profile/OmarLawaty)
+- Linkedin - [@OmarLawaty](https://linkedin.com/in/omarlawatey)
