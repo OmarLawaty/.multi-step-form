@@ -62,7 +62,7 @@ export const Addons = () => {
           setCurrentStep({ type: 'go-back-step' });
         }}
       >
-        Next
+        Next Step
       </NavigationButtons>
     </>
   );

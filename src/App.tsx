@@ -17,7 +17,7 @@ const App = () => {
       flexDir={['column', null, 'row']}
       justify={['flex-start', null, 'center']}
       gap={[0, null, 24]}
-      w={['100vw', null, '65vw']}
+      minW={['100vw', null, '65vw']}
       minH={['100vh', null, '600px']}
       rounded={[0, null, 16]}
       bg={['gray.100', null, 'white']}

@@ -44,6 +44,7 @@ export const NavigationPanel = () => {
               borderColor={currentStep === step ? 'blue.200' : 'gray.100'}
               bg={currentStep === step ? 'blue.200' : 'transparent'}
               color={currentStep === step ? 'blue.900' : 'white'}
+              transition="border 0.5s, background 0.5s, color 0.5s"
               fontSize="sm"
             >
               {index + 1}
