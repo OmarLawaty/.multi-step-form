@@ -24,7 +24,7 @@ const App = () => {
       p={[0, null, 4]}
       pos="relative"
     >
-      {currentStep !== 'thankYou' && <NavigationPanel />}
+      <NavigationPanel />
 
       <Flex
         as="section"
@@ -41,6 +41,15 @@ const App = () => {
         pt={[7, null, 9]}
         pb={[7, null, 0]}
         boxShadow={['0px 26px 55px 2px rgba(0,0,0,0.18)', null, 'unset']}
+        _after={{
+          content: '""',
+          pos: 'absolute',
+          top: '100%',
+          left: '0',
+          width: '100%',
+          height: '100px',
+          zIndex: 'base'
+        }}
       >
         <ProductOptionsProvider>
           <CurrentStepComponent />

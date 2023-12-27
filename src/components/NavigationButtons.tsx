@@ -22,6 +22,7 @@ export const NavigationButtons = ({ isFirstStep, onBack, onNext, isError, childr
     pos={['fixed', null, 'static']}
     insetX="0"
     bottom="0"
+    zIndex="docked"
     bg="white"
     p="4"
     px={[4, null, 0.5]}

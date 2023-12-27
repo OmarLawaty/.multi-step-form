@@ -29,7 +29,7 @@ export const plans: Plan[] = [
 export const addons: Addon[] = [
   {
     key: 'service',
-    title: 'online-service',
+    title: 'online service',
     description: 'Access to multiplayer games',
     cost: {
       monthly: 1,
@@ -39,7 +39,7 @@ export const addons: Addon[] = [
   },
   {
     key: 'storage',
-    title: 'larger-storage',
+    title: 'larger storage',
     description: 'Extra 1TB of cloud save',
     cost: {
       monthly: 2,
@@ -49,7 +49,7 @@ export const addons: Addon[] = [
   },
   {
     key: 'profile',
-    title: 'customizable-profile',
+    title: 'customizable profile',
     description: 'Custom theme on your profile',
     cost: {
       monthly: 2,
