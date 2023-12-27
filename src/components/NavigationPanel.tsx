@@ -1,9 +1,9 @@
 import { Flex, Text } from '@chakra-ui/react';
 
-import { STEPS } from '../../constants';
-import { camelCaseToNormal } from '../../utils/helpers';
-import { useStepState } from '../../contexts';
-import { desktopSideBarBg, mobileSideBarBg } from '../../assets/images';
+import { STEPS } from '../constants';
+import { camelCaseToNormal } from '../utils/helpers';
+import { useStepState } from '../contexts';
+import { desktopSideBarBg, mobileSideBarBg } from '../assets/images';
 
 export const NavigationPanel = () => {
   const [currentStep] = useStepState();

@@ -38,7 +38,9 @@ const App = () => {
         rounded={[10, null, 0]}
         pl={[6, null, 2]}
         pr={[6, null, 20]}
-        py={[7, null, 9]}
+        pt={[7, null, 9]}
+        pb={[7, null, 0]}
+        boxShadow={['0px 26px 55px 2px rgba(0,0,0,0.18)', null, 'unset']}
       >
         <ProductOptionsProvider>
           <CurrentStepComponent />

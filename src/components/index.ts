@@ -1,2 +1,3 @@
 export * from './NavigationButtons';
-export * from './NavigationPanel/NavigationPanel';
+export * from './NavigationPanel';
+export * from './StepHeader';
