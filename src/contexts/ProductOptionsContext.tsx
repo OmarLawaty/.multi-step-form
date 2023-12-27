@@ -31,7 +31,7 @@ type Action =
 
 const getPromotedAddons = () => addons.filter(addon => addon.isPromoted).map(addon => addon.key);
 
-const defaultProductOptions: ProductOptions = {
+const productOptions: ProductOptions = {
   userData: {
     name: '',
     email: '',
@@ -79,13 +79,13 @@ const defaultProductOptions: ProductOptions = {
   }
 };
 
-const ProductOptionsContext = createContext<ProductOptions>(defaultProductOptions);
+const ProductOptionsContext = createContext<ProductOptions>(productOptions);
 const ProductOptionsDispatcherContext = createContext<React.Dispatch<Action>>(
   null as unknown as React.Dispatch<Action>
 );
 
 export const ProductOptionsProvider = ({ children }: { children: ReactNode }) => {
-  const [currentOptions, dispatch] = useReducer(optionsReducer, defaultProductOptions);
+  const [currentOptions, dispatch] = useReducer(optionsReducer, productOptions);
 
   return (
     <ProductOptionsDispatcherContext.Provider value={dispatch}>
@@ -105,7 +105,7 @@ const getUpdatedAddonsArray = (currentAddons: AddonKey[], clickedAddon: AddonKey
 const optionsReducer = (currentOptions: ProductOptions, action: Action): ProductOptions => {
   switch (action.type) {
     case 'reset-options':
-      return defaultProductOptions;
+      return productOptions;
 
     case 'update-user-data':
       return { ...currentOptions, userData: action.payload };
