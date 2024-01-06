@@ -3,7 +3,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import { STEPS } from '../constants';
 import { transformString } from '../utils/helpers';
 import { useStepState } from '../contexts';
-import { desktopSideBarBg, mobileSideBarBg } from '../assets/images';
+import { desktopSideBarBg, mobileSideBarBg } from '../../public';
 
 export const NavigationPanel = () => {
   const [currentStep] = useStepState();
@@ -17,7 +17,8 @@ export const NavigationPanel = () => {
       align={['flex-start', null, 'center']}
       justify={['center', null, 'flex-start']}
       gap={[4, null, 6]}
-      bgImage={[mobileSideBarBg, null, desktopSideBarBg]}
+      // backgroundImage={'url("/bg-sidebar-desktop.svg")'}
+      bgImage={[`url("${mobileSideBarBg}")`, null, `url("${desktopSideBarBg}")`]}
       bgRepeat="no-repeat"
       bgSize="100%"
       px={[null, null, 7]}

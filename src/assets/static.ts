@@ -1,6 +1,6 @@
 import { Addon, Plan } from './types';
 
-import { arcadeIcon, controllerIcon, gamePadIcon } from './images';
+import { arcadeIcon, controllerIcon, gamePadIcon } from '../../public';
 
 export const plans: Plan[] = [
   {

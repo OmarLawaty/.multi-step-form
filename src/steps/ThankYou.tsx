@@ -1,6 +1,6 @@
 import { Flex, Heading, Image, Text } from '@chakra-ui/react';
 
-import { thankYouIcon } from '../assets/images';
+import { thankYouIcon } from '../../public';
 
 export const ThankYou = () => {
   return (

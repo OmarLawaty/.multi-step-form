@@ -5,7 +5,7 @@ import { addons } from '../assets/static';
 import { useStepState } from '../contexts/StepsContext';
 import { NavigationButtons, StepHeader } from '../components';
 import { Addon } from '../assets/types';
-import { checkMarkIcon } from '../assets/images';
+import { checkMarkIcon } from '../../public';
 
 export const Addons = () => {
   const [currentProductOptions, setCurrentProductOptions] = useProductOptionsState();
