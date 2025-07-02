@@ -17,7 +17,6 @@ export const NavigationPanel = () => {
       align={['flex-start', null, 'center']}
       justify={['center', null, 'flex-start']}
       gap={[4, null, 6]}
-      // backgroundImage={'url("/bg-sidebar-desktop.svg")'}
       bgImage={[`url("${mobileSideBarBg}")`, null, `url("${desktopSideBarBg}")`]}
       bgRepeat="no-repeat"
       bgSize="100%"

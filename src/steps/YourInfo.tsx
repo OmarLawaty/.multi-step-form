@@ -18,7 +18,7 @@ export const YourInfo = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setCurrentStep] = useStepState();
 
-  const [error, setError] = useState(defaultErrorMessages);
+  const [error, setError] = useState<ErrorMessages>(defaultErrorMessages);
   const [inputValues, setInputValues] = useState(currentProductOptions.userData);
 
   const ValidateInput = () => {
